@@ -21,7 +21,13 @@
 
 ## :link: Links
 
-[Figma](https://www.figma.com/file/EDiZutXRORcMXrVqgm40Vv/i9-Website)
+- [Identidade Visual](https://drive.google.com/file/d/1yOQcqmh1tpRxPFTZ8AC989uqr5o6NlEZ/view?usp=sharing)
+
+- [Logo](https://drive.google.com/drive/folders/1hycFttjppTd9jJmM9ChGrYdXCd-CasqE?usp=sharing)
+
+- [Fonte](https://drive.google.com/drive/folders/1ncFGqkyWxCgErlYHHWXWFFbvX1WBxrDI?usp=sharing)
+
+- [Figma](https://www.figma.com/file/EDiZutXRORcMXrVqgm40Vv/i9-Website)
 
 ## :hammer_and_wrench: Pré Requisitos
 
@@ -50,35 +56,24 @@ npm install
 npm run dev
 ```
 
-### :twisted_rightwards_arrows: Fluxo de Desenvolvimento (GitFlow)
+### :twisted_rightwards_arrows: Fluxo de Desenvolvimento
 
-#### Iniciar Gitflow
+#### Criar Branch
 
-```bash
-git flow init # Depois só pressionar ENTER até finalizar
-```
+#### Realizar a tarefa
 
-#### Começar uma tarefa
-
-```bash
-git flow feature start [nome para a tarefa]
-```
-
-#### Terminar uma tarefa
-
-```bash
-git flow feature finish [nome para a tarefa]
-```
+#### Criar um Pull Request
 
 ## :globe_with_meridians: Arquitetura
 
-![Arquitetura](https://github.com/inove-jr/i9-website/assets/112443051/305d1f9e-786d-44b3-a4bc-6de7b62875e7)
+![Arquitetura](https://github.com/inove-jr/i9-website/assets/112443051/ce3c3884-5652-4812-95b8-68a2486c02df)
 
 ### :oil_drum: Google Sheets
 
 ```mermaid
 erDiagram
     Membros {
+        int cpf PK
         string nome
         string diretoria
         string cargo
@@ -86,15 +81,27 @@ erDiagram
         string linkedin
         string github
         string instagram
+        string site_pessoal
+        string email
         date data_entrada
         date data_saida
     }
     Projetos {
+        int id PK
         string nome 
         string empresa
         string descricao
         string tipo_servico
-        string link
+        string link_deploy
+        string repositorio_git
         date data_contrato
     }
+    Participacao {
+        int cpf_membro PK,FK
+        int id_projeto PK,FK
+        string funcao "Front,Back, Design ou Gestão"
+    }
+
+    Membros only one to zero or many Participacao : ""
+    Projetos only one to one or many Participacao : ""
 ```
