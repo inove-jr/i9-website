@@ -135,4 +135,12 @@ erDiagram
         string repositorio_git
         date data_contrato
     }
+    Participacao {
+        int cpf_membro PK,FK
+        int id_projeto PK,FK
+        string funcao "Front,Back, Design ou Gestão"
+    }
+
+    Membros only one to zero or many Participacao : ""
+    Projetos only one to one or many Participacao : ""
 ```
