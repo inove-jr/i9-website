@@ -1,100 +1,36 @@
-# Inove Jr - Site Institucional
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-[![Git](https://img.shields.io/badge/Git-%23000?style=for-the-badge&logo=git)](https://git-scm.com/)
-[![Node](https://img.shields.io/badge/Node.js-%23000?style=for-the-badge&logo=nodedotjs)](https://nodejs.org/)
-[![Next](https://img.shields.io/badge/Next.js-%23000?style=for-the-badge&logo=nextdotjs)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React.js-%23000?style=for-the-badge&logo=react)](https://react.dev/)
-[![Tailwind](https://img.shields.io/badge/Tailwind-%23000?style=for-the-badge&logo=tailwindcss)](https://tailwindcss.com/)
-[![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-%23000?style=for-the-badge&logo=shadcnui)](https://ui.shadcn.com/)
+## Getting Started
 
-![Figma](https://img.shields.io/badge/Figma-%23000?style=for-the-badge&logo=figma)
-[![Google Apps Script](https://img.shields.io/badge/Google%20Apps%20Script-%23000?style=for-the-badge&logo=googleappsscript)](https://developers.google.com/apps-script?hl=pt-br)
-[![Google Sheets](https://img.shields.io/badge/Google%20Sheets-%23000?style=for-the-badge&logo=googlesheets)](https://developers.google.com/sheets?hl=pt-br)
-
-## :bookmark_tabs: Manual
-
-[Git Cheatsheet](https://github.com/d3vlopes/git-ultimate-cheatsheet) - Comandos Git
-
-[Commits semânticos](https://github.com/AdrianaSaty/colinha-commit-semantico) - Padrões de Commits
-
- [Configurar SSH](https://www.freecodecamp.org/portuguese/news/como-obter-e-configurar-suas-chaves-ssh-do-git-e-do-github/) - Conectar com Github via SSH
-
-## :link: Links
-
-[Figma](https://www.figma.com/file/EDiZutXRORcMXrVqgm40Vv/i9-Website)
-
-## :hammer_and_wrench: Pré Requisitos
-
-- [ ] [Git](https://git-scm.com/downloads)
-- [ ] [Node.js](https://nodejs.org/en/download)
-
-## :technologist: Guia de Desenvolvimento
-
-### :sparkles: Iniciar Projeto
-
-#### Clonar Repositório
-
-```bash
-git clone git@github.com:inove-jr/i9-website.git
-```
-
-#### Instalar Dependências
-
-```bash
-npm install
-```
-
-#### Executar em desenvolvimento
+First, run the development server:
 
 ```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-### :twisted_rightwards_arrows: Fluxo de Desenvolvimento (GitFlow)
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-#### Iniciar Gitflow
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-```bash
-git flow init # Depois só pressionar ENTER até finalizar
-```
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-#### Começar uma tarefa
+## Learn More
 
-```bash
-git flow feature start [nome para a tarefa]
-```
+To learn more about Next.js, take a look at the following resources:
 
-#### Terminar uma tarefa
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-```bash
-git flow feature finish [nome para a tarefa]
-```
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## :globe_with_meridians: Arquitetura
+## Deploy on Vercel
 
-![Arquitetura](https://github.com/inove-jr/i9-website/assets/112443051/305d1f9e-786d-44b3-a4bc-6de7b62875e7)
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-### :oil_drum: Google Sheets
-
-```mermaid
-erDiagram
-    Membros {
-        string nome
-        string diretoria
-        string cargo
-        string foto_base64
-        string linkedin
-        string github
-        string instagram
-        date data_entrada
-        date data_saida
-    }
-    Projetos {
-        string nome 
-        string empresa
-        string descricao
-        string tipo_servico
-        string link
-        date data_contrato
-    }
-```
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
