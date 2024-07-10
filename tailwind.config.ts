@@ -18,6 +18,10 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        primary: ["var(--font-prime)"],
+        secondary: ["var(--font-kanit)"],
+      },
       colors: {
         border: "var(--border)",
         input: "var(--input)",

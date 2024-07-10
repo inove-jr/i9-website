@@ -1,12 +1,10 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "@/styles/globals.css";
+import type { Metadata } from "next";
 import { Footer } from "@/components/layout/Footer";
 
 import favicon from "public/favicon.ico";
 import faviconDark from "public/favicon-dark.ico";
-
-const inter = Inter({ subsets: ["latin"] });
+import { kanit, prime } from "@/styles/fonts";
 
 export const metadata: Metadata = {
   title: "Inove Jr",
@@ -34,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='pt-br'>
-      <body className={inter.className}>
+      <body className={`${prime.variable} ${kanit.variable}`}>
         {children}
         <Footer />
       </body>
