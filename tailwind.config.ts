@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
@@ -7,7 +7,7 @@ const config = {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
-	],
+  ],
   prefix: "",
   theme: {
     container: {
@@ -19,38 +19,82 @@ const config = {
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        border: "var(--border)",
+        input: "var(--input)",
+        ring: "var(--ring)",
+        background: "var(--background)",
+        foreground: "var(--foreground)",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "var(--primary)",
+          foreground: "var(--primary-foreground)",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "var(--secondary)",
+          foreground: "var(--secondary-foreground)",
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: "var(--destructive)",
+          foreground: "var(--destructive-foreground)",
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: "var(--muted)",
+          foreground: "var(--muted-foreground)",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: "var(--accent)",
+          foreground: "var(--accent-foreground)",
         },
         popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          DEFAULT: "var(--popover)",
+          foreground: "var(--popover-foreground)",
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: "var(--card)",
+          foreground: "var(--card-foreground)",
+        },
+        "i9-orange": {
+          900: "#5c1f00",
+          800: "#852f04",
+          700: "#ad410b",
+          600: "#d65515",
+          DEFAULT: "#fe6c21",
+          400: "#ff884c",
+          300: "#ffa477",
+          200: "#ffc1a1",
+          100: "#ffddcc",
+        },
+        "i9-blue": {
+          900: "#001c38",
+          800: "#071f38",
+          700: "#0e2338",
+          600: "#152638",
+          DEFAULT: "#1b2937",
+          400: "#3c536a",
+          300: "#64809c",
+          200: "#94b1cd",
+          100: "#cce6ff",
+        },
+        "i9-white": {
+          900: "#b0b0b0",
+          800: "#bdbdbd",
+          700: "#c9c9c9",
+          600: "#d9d9d9",
+          DEFAULT: "#f2f2f2",
+          400: "#f5f5f5",
+          300: "#f9f9f9",
+          200: "#fcfcfc",
+          100: "#ffffff",
+        },
+        "i9-black": {
+          900: "#140000",
+          800: "#140505",
+          700: "#140a0a",
+          600: "#140f0f",
+          DEFAULT: "#141414",
+          400: "#4f4f4f",
+          300: "#696969",
+          200: "#858585",
+          100: "#a6a6a6",
         },
       },
       borderRadius: {
@@ -75,6 +119,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;
