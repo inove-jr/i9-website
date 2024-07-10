@@ -1,12 +1,12 @@
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "@/styles/globals.css"
-import { Footer } from "@/components/layout/Footer"
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "@/styles/globals.css";
+import { Footer } from "@/components/layout/Footer";
 
-import favicon from "public/favicon.ico"
-import faviconDark from "public/favicon-dark.ico"
+import favicon from "public/favicon.ico";
+import faviconDark from "public/favicon-dark.ico";
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Inove Jr",
@@ -25,19 +25,19 @@ export const metadata: Metadata = {
       media: "(prefers-color-scheme: dark)",
     },
   ],
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br">
+    <html lang='pt-br'>
       <body className={inter.className}>
         {children}
         <Footer />
       </body>
     </html>
-  )
+  );
 }

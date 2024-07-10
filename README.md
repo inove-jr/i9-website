@@ -17,7 +17,7 @@
 
 [Commits semânticos](https://github.com/AdrianaSaty/colinha-commit-semantico) - Padrões de Commits
 
- [Configurar SSH](https://www.freecodecamp.org/portuguese/news/como-obter-e-configurar-suas-chaves-ssh-do-git-e-do-github/) - Conectar com Github via SSH
+[Configurar SSH](https://www.freecodecamp.org/portuguese/news/como-obter-e-configurar-suas-chaves-ssh-do-git-e-do-github/) - Conectar com Github via SSH
 
 ## :link: Links
 
@@ -127,7 +127,7 @@ erDiagram
     }
     Projetos {
         int id PK
-        string nome 
+        string nome
         string empresa
         string descricao
         string tipo_servico

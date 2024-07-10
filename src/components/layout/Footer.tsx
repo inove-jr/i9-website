@@ -1,5 +1,1 @@
-export const Footer = () => (
-    <footer className="bg-green-400 text-center p-4">
-        Footer
-    </footer>
-)
+export const Footer = () => <footer className='p-4 text-center'>Footer</footer>;
