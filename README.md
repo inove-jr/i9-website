@@ -85,7 +85,16 @@ npm run dev
 #### Realizar a tarefa
 
 - Realize os commits necessários na branch da tarefa
+
+```bash
+git commit
+```
+
 - Envie as modificações para o GitHub
+
+```bash
+git push
+```
 
 #### Criar um Pull Request
 
