@@ -40,13 +40,21 @@
   * {
     @apply border-border;
   }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-primary;
+  }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background font-secondary text-foreground;
   }
 }
 
 @layer utilities {
   .decorated-border::before {
-    @apply -mt-[0.1em] mr-[0.2em] inline-block h-[1em] w-[0.25em] rounded-[1em] bg-i9-orange align-middle content-[""];
+    @apply -mt-[0.2em] mr-[0.2em] inline-block h-[1em] w-[0.25em] rounded-[1em] bg-i9-orange align-middle content-[""];
   }
 }
