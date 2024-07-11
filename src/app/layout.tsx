@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 import type { Metadata } from "next";
-import { Footer } from "@/components/layout/Footer";
+//import { Footer } from "@/components/layout/Footer";
 
 import favicon from "public/favicon.ico";
 import faviconDark from "public/favicon-dark.ico";
@@ -31,10 +31,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='pt-br'>
+    <html lang="pt-br">
       <body className={`${prime.variable} ${kanit.variable}`}>
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
