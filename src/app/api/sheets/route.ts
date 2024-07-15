@@ -1,19 +1,36 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-import { getSheetData } from "../../../services/googleSheetsService";
-import { NextResponse } from "next/server";
+import { getSheetData } from "@/services/googleSheetsService";
 
-export const GET = async (req: NextApiRequest, res: NextApiResponse) => {
-  const url = new URL(req.url as string, `http://${req.headers.host}`);
-  const range = url.searchParams.get("range");
-  const sheetName = url.searchParams.get("sheetName");
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const range = searchParams.get("range");
+  const sheetName = searchParams.get("sheetName");
+
+  if (!range || !sheetName) {
+    return new Response(
+      JSON.stringify({
+        message: "Parâmetros 'range' e 'sheetName' são obrigatórios",
+      }),
+      {
+        status: 400,
+        headers: { "Content-Type": "application/json" },
+      },
+    );
+  }
 
   try {
-    const data = await getSheetData(range as string, sheetName as string);
-    // console.log("Dados obtidos:", data);
-    return NextResponse.json({ data }, { status: 200 });
-    // return res.status(200).json({ data });
+    const data = await getSheetData(range, sheetName);
+    return new Response(JSON.stringify(data), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
   } catch (error) {
     console.error("GET sheets error:", error);
-    return res.status(500).json({ message: "Erro ao acessar o Google Sheets" });
+    return new Response(
+      JSON.stringify({ message: "Erro ao recuperar dados da planilha" }),
+      {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      },
+    );
   }
-};
+}
