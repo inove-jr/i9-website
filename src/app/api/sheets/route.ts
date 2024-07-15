@@ -1,4 +1,5 @@
 import { getSheetData } from "@/services/googleSheetsService";
+import { NextResponse } from "next/server";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -6,31 +7,20 @@ export async function GET(request: Request) {
   const sheetName = searchParams.get("sheetName");
 
   if (!range || !sheetName) {
-    return new Response(
-      JSON.stringify({
-        message: "Parâmetros 'range' e 'sheetName' são obrigatórios",
-      }),
-      {
-        status: 400,
-        headers: { "Content-Type": "application/json" },
-      },
+    return NextResponse.json(
+      { error: "Parâmetros 'range' e 'sheetName' são obrigatório" },
+      { status: 400 },
     );
   }
 
   try {
     const data = await getSheetData(range, sheetName);
-    return new Response(JSON.stringify(data), {
-      status: 200,
-      headers: { "Content-Type": "application/json" },
-    });
+    return NextResponse.json(data, { status: 200 });
   } catch (error) {
     console.error("GET sheets error:", error);
-    return new Response(
-      JSON.stringify({ message: "Erro ao recuperar dados da planilha" }),
-      {
-        status: 500,
-        headers: { "Content-Type": "application/json" },
-      },
+    return NextResponse.json(
+      { error: "Erro ao recuperar dados da planilha" },
+      { status: 500 },
     );
   }
 }
