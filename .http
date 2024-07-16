@@ -1,0 +1,2 @@
+### Obtem dados de planilha passando range e sheetName
+GET http://localhost:3000/api/sheets?range=A:H&sheetName=projetos
