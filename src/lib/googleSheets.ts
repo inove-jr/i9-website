@@ -1,6 +1,7 @@
 import { google } from "googleapis";
+const { GOOGLE_SHEET_ID } = process.env;
 
-export const getGoogleSheetsClient = () => {
+export const googleClientSheets = () => {
   const { GOOGLE_CLIENT_EMAIL, GOOGLE_PRIVATE_KEY } = process.env;
 
   if (!GOOGLE_CLIENT_EMAIL || !GOOGLE_PRIVATE_KEY) {
@@ -18,4 +19,19 @@ export const getGoogleSheetsClient = () => {
   });
 
   return google.sheets({ version: "v4", auth });
+};
+
+if (!GOOGLE_SHEET_ID) {
+  throw new Error("Erro ao carregar as variáveis de ambiente");
+}
+
+export const getSheetData = async (range: string, sheetName: string) => {
+  const sheets = googleClientSheets();
+
+  const response = await sheets.spreadsheets.values.get({
+    spreadsheetId: GOOGLE_SHEET_ID,
+    range: `${sheetName}!${range}`,
+  });
+
+  return response.data.values;
 };
