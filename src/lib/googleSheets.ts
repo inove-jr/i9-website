@@ -7,7 +7,7 @@ export const googleClientSheets = () => {
   const auth = new google.auth.GoogleAuth({
     credentials: {
       client_email: GOOGLE_CLIENT_EMAIL,
-      private_key: GOOGLE_PRIVATE_KEY,
+      private_key: GOOGLE_PRIVATE_KEY.split(String.raw`\n`).join("\n"),
     },
     scopes: ["https://www.googleapis.com/auth/spreadsheets"],
   });
