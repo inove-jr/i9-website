@@ -4,33 +4,33 @@
 
 @layer base {
   :root {
-    --background: theme(colors.i9-white.DEFAULT);
-    --foreground: theme(colors.i9-black.DEFAULT);
+    --background: theme(colors.white.DEFAULT);
+    --foreground: theme(colors.black.DEFAULT);
 
-    --card: theme(colors.i9-white.100);
-    --card-foreground: theme(colors.i9-black.DEFAULT);
+    --card: theme(colors.white.100);
+    --card-foreground: theme(colors.black.DEFAULT);
 
-    --popover: theme(colors.i9-white.DEFAULT);
-    --popover-foreground: theme(colors.i9-black.DEFAULT);
+    --popover: theme(colors.white.DEFAULT);
+    --popover-foreground: theme(colors.black.DEFAULT);
 
-    --primary: theme(colors.i9-orange.DEFAULT);
-    --primary-foreground: theme(colors.i9-white.200);
+    --primary: theme(colors.orange.DEFAULT);
+    --primary-foreground: theme(colors.white.200);
 
-    --secondary: theme(colors.i9-blue.DEFAULT);
-    --secondary-foreground: theme(colors.i9-white.400);
+    --secondary: theme(colors.blue.DEFAULT);
+    --secondary-foreground: theme(colors.white.400);
 
-    --muted: theme(colors.i9-orange.100);
-    --muted-foreground: theme(colors.i9-black.300);
+    --muted: theme(colors.orange.100);
+    --muted-foreground: theme(colors.black.300);
 
-    --accent: theme(colors.i9-white.100);
-    --accent-foreground: theme(colors.i9-black.DEFAULT);
+    --accent: theme(colors.white.100);
+    --accent-foreground: theme(colors.black.DEFAULT);
 
     --destructive: theme(colors.red.700);
-    --destructive-foreground: theme(colors.i9-white.100);
+    --destructive-foreground: theme(colors.white.100);
 
-    --border: theme(colors.i9-white.DEFAULT);
-    --input: theme(colors.i9-white.DEFAULT);
-    --ring: theme(colors.i9-orange.DEFAULT);
+    --border: theme(colors.white.DEFAULT);
+    --input: theme(colors.white.DEFAULT);
+    --ring: theme(colors.orange.DEFAULT);
 
     --radius: 0.5rem;
   }
@@ -55,6 +55,6 @@
 
 @layer utilities {
   .decorated-border::before {
-    @apply -mt-[0.2em] mr-[0.2em] inline-block h-[1em] w-[0.25em] rounded-[1em] bg-i9-orange align-middle content-[""];
+    @apply bg-orange -mt-[0.2em] mr-[0.2em] inline-block h-[1em] w-[0.25em] rounded-[1em] align-middle content-[""];
   }
 }

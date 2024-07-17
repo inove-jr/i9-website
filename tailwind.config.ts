@@ -56,7 +56,7 @@ const config = {
           DEFAULT: "var(--card)",
           foreground: "var(--card-foreground)",
         },
-        "i9-orange": {
+        orange: {
           900: "#5c1f00",
           800: "#852f04",
           700: "#ad410b",
@@ -67,7 +67,7 @@ const config = {
           200: "#ffc1a1",
           100: "#ffddcc",
         },
-        "i9-blue": {
+        blue: {
           900: "#001c38",
           800: "#071f38",
           700: "#0e2338",
@@ -78,7 +78,7 @@ const config = {
           200: "#94b1cd",
           100: "#cce6ff",
         },
-        "i9-white": {
+        white: {
           900: "#b0b0b0",
           800: "#bdbdbd",
           700: "#c9c9c9",
@@ -89,7 +89,7 @@ const config = {
           200: "#fcfcfc",
           100: "#ffffff",
         },
-        "i9-black": {
+        black: {
           900: "#140000",
           800: "#140505",
           700: "#140a0a",
