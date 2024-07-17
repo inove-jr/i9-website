@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import {
   Card,
   CardContent,
@@ -12,88 +13,108 @@ import { SiTarget } from "react-icons/si";
 import { FaRegStar } from "react-icons/fa";
 import { ReactNode } from "react";
 
-
-export const About = () =>{
-   //conteudo dos cards 
-   const data_cards = [
+export const About = () => {
+  //conteudo dos cards
+  const data_cards = [
     {
-        icon: <FaAngleDoubleUp size={30} color="#fe6c21" className="mr-1" />,
-        title: "Missão",
-        description: "Oferecer experiências práticas aos estudantes de Engenharia da Computação, desenvolvendo suas habilidades técnicas e pessoais."
+      icon: FaAngleDoubleUp,
+      title: "Missão",
+      description:
+        "Oferecer experiências práticas aos estudantes de Engenharia da Computação, desenvolvendo suas habilidades técnicas e pessoais.",
     },
     {
-        icon:  <SiTarget size={30} color="#fe6c21" className="mr-1" />,
-        title: "Visão",
-        description: "Ser referência na formação de profissionais de Engenharia da Computação, reconhecida pela excelência e impacto positivo na sociedade."
+      icon: SiTarget,
+      title: "Visão",
+      description:
+        "Ser referência na formação de profissionais de Engenharia da Computação, reconhecida pela excelência e impacto positivo na sociedade.",
     },
     {
-        icon: <FaRegStar size={30} color="#fe6c21" className="mr-1" />,
-        title: "Valores",
-        description: "Empreendedorismo, ética, proatividade, inovação, profissionalismo e colaboração em todos os projetos."
+      icon: FaRegStar,
+      title: "Valores",
+      description:
+        "Empreendedorismo, ética, proatividade, inovação, profissionalismo e colaboração em todos os projetos.",
     },
-  ]
-  return(
-      <section className="w-screen h-auto lg:h-screen flex justify-center items-center  ">
-      <div className="p-4 rounded-lg  flex flex-col items-center lg:h-[54%] lg:flex-row w-[100%]  lg:px-4 xl:px-28 2xl:px-44">
-          {/* Mobile */}
-          <div className="lg:hidden mb-2">
-              <div className="flex flex-row items-center w-full ">
-                  <span className="w-2 h-10 lg:h-14 bg-[#fe6c21] rounded-md mr-3"></span>
-                  <h1 className="text-3xl md:text-4xl font-primary font-bold my-4">Quem Somos?</h1>
-              </div>
-              <p className="text-base md:text-lg text-wrap  w-full lg:w-[95%] text-justify font-secondary mt-2">
-              A Inove Jr. é a Empresa Júnior de Engenharia da Computação da Universidade Federal do Vale do São Francisco (UNIVASF), situada em Juazeiro, Bahia. Temos como objetivo proporcionar aos estudantes uma vivência prática e empresarial. Realizamos consultorias, projetos e cursos, Preparando futuros engenheiros e contribuindo para a sociedade com serviços de qualidade. <a className="text-[#fe6c21]" href="">Saiba Mais</a>
-              </p>
+  ];
+  return (
+    <section className="flex h-auto w-screen items-center justify-center lg:h-screen">
+      <div className="flex w-[100%] flex-col items-center rounded-lg p-4 lg:h-[54%] lg:flex-row lg:px-4 xl:px-28 2xl:px-44">
+        {/* Mobile */}
+        <div className="mb-2 lg:hidden">
+          <div className="flex w-full flex-row items-center">
+            <span className="mr-3 h-10 w-2 rounded-md bg-orange lg:h-14"></span>
+            <h1 className="my-4 font-primary text-3xl font-bold md:text-4xl">
+              Quem Somos?
+            </h1>
           </div>
+          <p className="mt-2 w-full text-wrap text-justify font-secondary text-base md:text-lg lg:w-[95%]">
+            A Inove Jr. é a Empresa Júnior de Engenharia da Computação da
+            Universidade Federal do Vale do São Francisco (UNIVASF), situada em
+            Juazeiro, Bahia. Temos como objetivo proporcionar aos estudantes uma
+            vivência prática e empresarial. Realizamos consultorias, projetos e
+            cursos, Preparando futuros engenheiros e contribuindo para a
+            sociedade com serviços de qualidade.{" "}
+            <a className="text-orange" href="">
+              Saiba Mais
+            </a>
+          </p>
+        </div>
 
-          <img src="/team.jpg" alt="Team" className="w-full lg:w-[50%] h-[100%]  mx-2 mb-4 lg:mb-0 shadow-lg rounded-md" />
-          <div className="w-full pl-2 pr-2  gap-4 flex flex-col h-[100%]">
-              {/* Desktop */}
-              <div className="hidden lg:flex lg:flex-col h-auto justify-start items-start">
-                <div className="flex flex-row items-start w-3/4 h-auto ">
-                    <span className="w-2 h-8 lg:h-10 bg-[#fe6c21] my-2 rounded-md mr-3"></span>
-                    <h1 className=" lg:text-4xl font-bold my-2 font-primary xl:text-5xl">Quem Somos?</h1>
-                </div>
-                <p className="text-base text-wrap  h-auto text-justify font-secondary  ">
-                A Inove Jr. é a Empresa Júnior de Engenharia da Computação da Universidade Federal do Vale do São Francisco (UNIVASF), situada em Juazeiro, Bahia. Temos como objetivo proporcionar aos estudantes uma vivência prática e empresarial. Realizamos consultorias, projetos e cursos, Preparando futuros engenheiros e contribuindo para a sociedade com serviços de qualidade. <a className="text-[#fe6c21]" href="">Saiba Mais</a>
-                </p>
-              </div>
-              <div className="flex flex-col lg:flex-row gap-3 mt-2 w-full items-center">
-
-                  {
-                    data_cards.map((e,index) =>(
-                        <CardFull key={index} title= {e.title} description={e.description} > {e.icon} </CardFull>
-                    ))
-                  }
-                    
-              </div>
+        <img
+          src="/team.jpg"
+          alt="Team"
+          className="mx-2 mb-4 h-[100%] w-full rounded-md shadow-lg lg:mb-0 lg:w-[50%]"
+        />
+        <div className="flex h-[100%] w-full flex-col gap-4 pl-2 pr-2">
+          {/* Desktop */}
+          <div className="hidden h-auto items-start justify-start lg:flex lg:flex-col">
+            <div className="flex h-auto w-3/4 flex-row items-start">
+              <span className="my-2 mr-3 h-8 w-2 rounded-md bg-orange lg:h-10"></span>
+              <h1 className="my-2 font-primary font-bold lg:text-4xl xl:text-5xl">
+                Quem Somos?
+              </h1>
+            </div>
+            <p className="h-auto text-wrap text-justify font-secondary text-base">
+              A Inove Jr. é a Empresa Júnior de Engenharia da Computação da
+              Universidade Federal do Vale do São Francisco (UNIVASF), situada
+              em Juazeiro, Bahia. Temos como objetivo proporcionar aos
+              estudantes uma vivência prática e empresarial. Realizamos
+              consultorias, projetos e cursos, Preparando futuros engenheiros e
+              contribuindo para a sociedade com serviços de qualidade.{" "}
+              <a className="text-orange" href="">
+                Saiba Mais
+              </a>
+            </p>
           </div>
+          <div className="mt-2 flex w-full flex-col items-center gap-3 lg:flex-row">
+            {data_cards.map(({ icon: Icon, title, description }, index) => (
+              <CardFull key={index} title={title} description={description}>
+                <Icon size={30} className="mr-1 text-orange" />
+              </CardFull>
+            ))}
+          </div>
+        </div>
       </div>
-  </section>
+    </section>
   );
 };
 
-type Props ={
-  title:string;
+type Props = {
+  title: string;
   description: string;
   children: ReactNode;
- 
-}
-const  CardFull = ({title, description, children}:Props) =>{
-                          
-  return(
-      <Card className="w-full md:w-1/2 min-h-[180px]   lg:max-w-[300px]  lg:w-auto drop-shadow-lg shadow-lg">
-          <CardHeader className="flex flex-row justify-center items-center pt-3 pb-0 ">
-               {children}
-                <CardTitle className="text-center font-primary">{title}</CardTitle>
-          </CardHeader>
-          <CardContent className="py-3 px-2 items-center justify-center  h-[150px] ">
-              <CardDescription className="py-2 text-black text-center h-full xl:text-sm text-sm md:text-xs  font-secondary p-auto">
-                  {description}
-              </CardDescription>
-          </CardContent>
-      </Card>
-  )
-}
-
-
+};
+const CardFull = ({ title, description, children }: Props) => {
+  return (
+    <Card className="min-h-[180px] w-full shadow-lg drop-shadow-lg md:w-1/2 lg:w-auto lg:max-w-[300px]">
+      <CardHeader className="flex flex-row items-center justify-center pb-0 pt-3">
+        {children}
+        <CardTitle className="text-center font-primary">{title}</CardTitle>
+      </CardHeader>
+      <CardContent className="h-[150px] items-center justify-center px-2 py-3">
+        <CardDescription className="p-auto h-full py-2 text-center font-secondary text-sm text-black md:text-xs xl:text-sm">
+          {description}
+        </CardDescription>
+      </CardContent>
+    </Card>
+  );
+};
