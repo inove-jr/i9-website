@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 import type { Metadata } from "next";
-//import { Footer } from "@/components/layout/Footer";
+// import { Footer } from "@/components/layout/Footer";
 
 import favicon from "public/favicon.ico";
 import faviconDark from "public/favicon-dark.ico";

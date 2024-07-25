@@ -1,9 +1,11 @@
-import { Hero } from "./Hero";
 import { Navbar } from "@/components/layout/Navbar";
+import { Hero } from "./Hero";
 
-export const Header = () => (
-  <header className="p-4">
-    <Navbar />
-    <Hero />
-  </header>
-);
+export function Header() {
+  return (
+    <header className="p-4">
+      <Navbar />
+      <Hero />
+    </header>
+  );
+}

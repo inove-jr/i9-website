@@ -1,3 +1,7 @@
+/* eslint-disable react/jsx-no-constructed-context-values */
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable @typescript-eslint/no-use-before-define */
+
 import * as React from "react";
 import * as LabelPrimitive from "@radix-ui/react-label";
 import { Slot } from "@radix-ui/react-slot";
@@ -26,18 +30,16 @@ const FormFieldContext = React.createContext<FormFieldContextValue>(
   {} as FormFieldContextValue,
 );
 
-const FormField = <
+function FormField<
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
->({
-  ...props
-}: ControllerProps<TFieldValues, TName>) => {
+>({ ...props }: ControllerProps<TFieldValues, TName>) {
   return (
     <FormFieldContext.Provider value={{ name: props.name }}>
       <Controller {...props} />
     </FormFieldContext.Provider>
   );
-};
+}
 
 const useFormField = () => {
   const fieldContext = React.useContext(FormFieldContext);

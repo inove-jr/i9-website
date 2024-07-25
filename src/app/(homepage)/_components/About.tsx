@@ -8,14 +8,34 @@ import {
 } from "@/components/ui/card";
 
 // icons Missão, Valores e Visão
-import { FaAngleDoubleUp } from "react-icons/fa";
+import { FaAngleDoubleUp, FaRegStar } from "react-icons/fa";
 import { SiTarget } from "react-icons/si";
-import { FaRegStar } from "react-icons/fa";
 import { ReactNode } from "react";
 
-export const About = () => {
-  //conteudo dos cards
-  const data_cards = [
+type Props = {
+  title: string;
+  description: string;
+  children: ReactNode;
+};
+function CardFull({ title, description, children }: Props) {
+  return (
+    <Card className="min-h-[180px] w-full shadow-lg drop-shadow-lg md:w-1/2 lg:w-auto lg:max-w-[300px]">
+      <CardHeader className="flex flex-row items-center justify-center pb-0 pt-3">
+        {children}
+        <CardTitle className="text-center font-primary">{title}</CardTitle>
+      </CardHeader>
+      <CardContent className="h-[150px] items-center justify-center px-2 py-3">
+        <CardDescription className="p-auto h-full py-2 text-center font-secondary text-sm text-black md:text-xs xl:text-sm">
+          {description}
+        </CardDescription>
+      </CardContent>
+    </Card>
+  );
+}
+
+export function About() {
+  // conteudo dos cards
+  const dataCards = [
     {
       icon: FaAngleDoubleUp,
       title: "Missão",
@@ -41,7 +61,7 @@ export const About = () => {
         {/* Mobile */}
         <div className="mb-2 lg:hidden">
           <div className="flex w-full flex-row items-center">
-            <span className="mr-3 h-10 w-2 rounded-md bg-orange lg:h-14"></span>
+            <span className="mr-3 h-10 w-2 rounded-md bg-orange lg:h-14" />
             <h1 className="my-4 font-primary text-3xl font-bold md:text-4xl">
               Quem Somos?
             </h1>
@@ -53,7 +73,7 @@ export const About = () => {
             vivência prática e empresarial. Realizamos consultorias, projetos e
             cursos, Preparando futuros engenheiros e contribuindo para a
             sociedade com serviços de qualidade.{" "}
-            <a className="text-orange" href="">
+            <a className="text-orange" href="#about">
               Saiba Mais
             </a>
           </p>
@@ -68,7 +88,7 @@ export const About = () => {
           {/* Desktop */}
           <div className="hidden h-auto items-start justify-start lg:flex lg:flex-col">
             <div className="flex h-auto w-3/4 flex-row items-start">
-              <span className="my-2 mr-3 h-8 w-2 rounded-md bg-orange lg:h-10"></span>
+              <span className="my-2 mr-3 h-8 w-2 rounded-md bg-orange lg:h-10" />
               <h1 className="my-2 font-primary font-bold lg:text-4xl xl:text-5xl">
                 Quem Somos?
               </h1>
@@ -80,14 +100,14 @@ export const About = () => {
               estudantes uma vivência prática e empresarial. Realizamos
               consultorias, projetos e cursos, Preparando futuros engenheiros e
               contribuindo para a sociedade com serviços de qualidade.{" "}
-              <a className="text-orange" href="">
+              <a className="text-orange" href="#about">
                 Saiba Mais
               </a>
             </p>
           </div>
           <div className="mt-2 flex w-full flex-col items-center gap-3 lg:flex-row">
-            {data_cards.map(({ icon: Icon, title, description }, index) => (
-              <CardFull key={index} title={title} description={description}>
+            {dataCards.map(({ icon: Icon, title, description }) => (
+              <CardFull key={title} title={title} description={description}>
                 <Icon size={30} className="mr-1 text-orange" />
               </CardFull>
             ))}
@@ -96,25 +116,4 @@ export const About = () => {
       </div>
     </section>
   );
-};
-
-type Props = {
-  title: string;
-  description: string;
-  children: ReactNode;
-};
-const CardFull = ({ title, description, children }: Props) => {
-  return (
-    <Card className="min-h-[180px] w-full shadow-lg drop-shadow-lg md:w-1/2 lg:w-auto lg:max-w-[300px]">
-      <CardHeader className="flex flex-row items-center justify-center pb-0 pt-3">
-        {children}
-        <CardTitle className="text-center font-primary">{title}</CardTitle>
-      </CardHeader>
-      <CardContent className="h-[150px] items-center justify-center px-2 py-3">
-        <CardDescription className="p-auto h-full py-2 text-center font-secondary text-sm text-black md:text-xs xl:text-sm">
-          {description}
-        </CardDescription>
-      </CardContent>
-    </Card>
-  );
-};
+}
