@@ -10,13 +10,6 @@ export default function FormularioContato() {
   const [email, setEmail] = useState("");
   const [mensagem, setMensagem] = useState("");
   const [isVerified, setIsVerified] = useState(false);
-  const recaptchaRef = useRef(null);
-
-  // let form = {
-  //     nome,
-  //     email,
-  //     mensagem
-  // }
 
   async function handleCaptchaSubmissions(token: string | null) {
     try {
@@ -36,19 +29,7 @@ export default function FormularioContato() {
     }
   }
 
-  const handleChange = (token: string | null) => {
-    handleCaptchaSubmissions(token);
-  };
-
-  function handleExpired() {
-    setIsVerified(false);
-  }
-
-  /*
-        TODO
-            Função handleSubmit do form
-            Rota POST p google sheets
-    */
+  // TODO: Função handleSubmit do form Rota POST para google sheets
 
   return (
     <main className="flex h-screen flex-col items-center justify-center">
@@ -81,10 +62,9 @@ export default function FormularioContato() {
 
           {/* ReCAPTCHA */}
           <ReCAPTCHA
-            ref={recaptchaRef}
             sitekey={NEXT_PUBLIC_GOOGLE_RECAPTCHA || ""}
-            onChange={handleChange}
-            onExpired={handleExpired}
+            onChange={(token: string | null) => handleCaptchaSubmissions(token)}
+            onExpired={() => setIsVerified(false)}
             className="mb-2"
           ></ReCAPTCHA>
 
