@@ -17,7 +17,6 @@ export async function GET(request: Request) {
     const data = await getSheetData(range, sheetName);
     return NextResponse.json(data, { status: 200 });
   } catch (error) {
-    console.error("GET sheets error:", error);
     return NextResponse.json(
       { error: "Erro ao recuperar dados da planilha" },
       { status: 500 },

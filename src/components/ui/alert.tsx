@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/heading-has-content */
+/* eslint-disable react/jsx-props-no-spreading */
+
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 
@@ -25,7 +28,7 @@ const Alert = React.forwardRef<
 >(({ className, variant, ...props }, ref) => (
   <div
     ref={ref}
-    role='alert'
+    role="alert"
     className={cn(alertVariants({ variant }), className)}
     {...props}
   />
