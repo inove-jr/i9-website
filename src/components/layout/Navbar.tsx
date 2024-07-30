@@ -15,10 +15,10 @@ export function Navbar() {
   ];
 
   const [openMenu, setOpenMenu] = useState(false);
-  /* A COR VERMELHA VAI SAIR ASSIM QUE FIZEMOS A HERO, ELA VIRA BG-TRANSPARENT */
+
   return (
     <div className="bg-transparent">
-      <nav className="relative flex items-center justify-between bg-red-900 py-4 xl:px-28 2xl:px-44">
+      <nav className="relative flex items-center justify-between bg-transparent py-4">
         <Link className="text-3xl font-bold leading-none" title="logo" href="/">
           <Image
             src="/logoi9.png"
@@ -55,7 +55,7 @@ export function Navbar() {
             size="32px"
           />
           <IoMdClose
-            className={`${openMenu ? "" : "hidden"}`}
+            className={`${openMenu ? "z-30" : "hidden"}`}
             color="#FFF"
             size="32px"
           />
@@ -64,8 +64,8 @@ export function Navbar() {
 
       <div
         className={`${
-          openMenu ? "block" : "hidden"
-        } bg-transparent py-4 text-center lg:hidden`}
+          openMenu ? "absolute" : "hidden"
+        } inset-0 z-20 h-auto bg-blue-800 py-4 pt-20 text-center opacity-90 mix-blend-lighten backdrop-blur-3xl lg:hidden`}
       >
         <ul className="space-y-4">
           {links.map((link) => (
