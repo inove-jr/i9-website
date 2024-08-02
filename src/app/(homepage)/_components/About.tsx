@@ -56,7 +56,7 @@ export function About() {
     },
   ];
   return (
-    <section className="flex h-auto w-screen items-center justify-center lg:h-screen">
+    <section className="flex h-auto w-auto items-center justify-center lg:h-screen">
       <div className="flex w-[100%] flex-col items-center rounded-lg p-4 lg:h-[54%] lg:flex-row lg:px-4 xl:px-28 2xl:px-44">
         {/* Mobile */}
         <div className="mb-2 lg:hidden">
