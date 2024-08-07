@@ -1,7 +1,7 @@
 "use client";
 
 import ReCAPTCHA from "react-google-recaptcha";
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { env } from "@/env";
 
 export default function FormularioContato() {
@@ -66,7 +66,7 @@ export default function FormularioContato() {
             onChange={(token: string | null) => handleCaptchaSubmissions(token)}
             onExpired={() => setIsVerified(false)}
             className="mb-2"
-          ></ReCAPTCHA>
+          />
 
           <button
             type="submit"

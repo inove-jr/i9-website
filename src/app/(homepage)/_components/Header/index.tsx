@@ -1,5 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar";
 import Image from "next/image";
+import background from "@/../public/background.png";
+import meiologo from "@/../public/meiologo.png";
 import { Hero } from "./Hero";
 
 // configuração das imagens de fundo da home page
@@ -7,17 +9,17 @@ function BackgroundImage() {
   return (
     <div className="absolute inset-0">
       <Image
-        src="/background.png"
-        layout="fill"
-        objectFit="cover"
+        src={background}
         alt="Background"
-        className="-z-10"
+        placeholder="blur"
+        className="-z-10 object-cover"
+        fill
       />
       <div className="absolute inset-0 bg-blue-800 opacity-90 mix-blend-lighten" />
-
-      <img
-        src="/meiologo.png"
-        alt=""
+      <Image
+        src={meiologo}
+        alt="logo"
+        placeholder="empty"
         className="absolute bottom-0 z-0 w-full lg:left-12 lg:w-1/2"
       />
     </div>

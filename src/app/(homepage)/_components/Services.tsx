@@ -36,7 +36,7 @@ function CardFull({ title, description, children }: Props) {
         </CardTitle>
       </CardHeader>
       <CardContent className="h-[150px] items-center justify-center px-2 py-0 sm:py-3">
-        <CardDescription className="p-auto h-full py-2 text-center font-secondary text-sm text-black md:text-xs xl:text-sm">
+        <CardDescription className="h-full py-2 text-center font-secondary text-sm text-black md:text-xs xl:text-sm">
           {description}
         </CardDescription>
       </CardContent>
@@ -116,11 +116,11 @@ export function Services() {
             ))}
           </CarouselContent>
           <CarouselPrevious
-            className="absolute -left-9 top-1/2 z-10 -translate-y-1/2 transform"
+            className="absolute -left-9 top-1/2 z-10 -translate-y-1/2"
             variant="link"
           />
           <CarouselNext
-            className="absolute -right-9 top-1/2 z-10 -translate-y-1/2 transform"
+            className="absolute -right-9 top-1/2 z-10 -translate-y-1/2"
             variant="link"
           />
         </Carousel>

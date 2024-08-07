@@ -29,7 +29,7 @@ export function Navbar() {
           />
         </Link>
 
-        <ul className="absolute right-0 top-1/2 hidden -translate-x-1/3 -translate-y-1/2 transform lg:mx-auto lg:flex lg:w-auto lg:items-center lg:space-x-6">
+        <ul className="absolute right-0 top-1/2 hidden -translate-x-1/3 -translate-y-1/2 lg:mx-auto lg:flex lg:w-auto lg:items-center lg:space-x-6">
           {links.map((link) => (
             <li key={link.name}>
               <a
