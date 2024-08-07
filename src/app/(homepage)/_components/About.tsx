@@ -25,7 +25,7 @@ function CardFull({ title, description, children }: Props) {
         <CardTitle className="text-center font-primary">{title}</CardTitle>
       </CardHeader>
       <CardContent className="h-[150px] items-center justify-center px-2 py-3">
-        <CardDescription className="p-auto h-full py-2 text-center font-secondary text-sm text-black md:text-xs xl:text-sm">
+        <CardDescription className="h-full py-2 text-center font-secondary text-sm text-black md:text-xs xl:text-sm">
           {description}
         </CardDescription>
       </CardContent>
@@ -56,13 +56,12 @@ export function About() {
     },
   ];
   return (
-    <section className="flex h-auto w-screen items-center justify-center lg:h-screen">
-      <div className="flex w-[100%] flex-col items-center rounded-lg p-4 lg:h-[54%] lg:flex-row lg:px-4 xl:px-28 2xl:px-44">
+    <section className="flex h-auto w-full items-center justify-center px-2 lg:h-screen">
+      <div className="flex w-full flex-col items-center rounded-lg p-4 lg:h-[54%] lg:flex-row lg:px-4 xl:px-28 2xl:px-44">
         {/* Mobile */}
         <div className="mb-2 lg:hidden">
           <div className="flex w-full flex-row items-center">
-            <span className="mr-3 h-10 w-2 rounded-md bg-orange lg:h-14" />
-            <h1 className="my-4 font-primary text-3xl font-bold md:text-4xl">
+            <h1 className="decorated-border my-4 font-primary text-3xl font-bold md:text-4xl">
               Quem Somos?
             </h1>
           </div>
@@ -82,9 +81,9 @@ export function About() {
         <img
           src="/team.jpg"
           alt="Team"
-          className="mx-2 mb-4 h-[100%] w-full rounded-md shadow-lg lg:mb-0 lg:w-[50%]"
+          className="mx-2 mb-4 size-full rounded-md shadow-lg lg:mb-0 lg:w-1/2"
         />
-        <div className="flex h-[100%] w-full flex-col gap-4 pl-2 pr-2">
+        <div className="flex size-full flex-col gap-4 px-2">
           {/* Desktop */}
           <div className="hidden h-auto items-start justify-start lg:flex lg:flex-col">
             <div className="flex h-auto w-3/4 flex-row items-start">

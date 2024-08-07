@@ -6,7 +6,7 @@ export function Hero() {
     <div className="relative flex h-screen flex-col justify-start md:py-16 lg:justify-center">
       <div className="relative z-10 my-6 flex w-full flex-col items-center justify-center px-5 md:px-10 lg:w-1/2 lg:items-start lg:justify-start lg:px-0">
         <h1 className="text-center font-secondary text-4xl font-semibold text-white-200 md:text-5xl lg:text-start lg:text-6xl">
-          <span className="pointer-events-none font-secondary lg:underline lg:decoration-orange lg:decoration-[4px]">
+          <span className="pointer-events-none font-secondary lg:underline lg:decoration-orange lg:decoration-4">
             Inove
           </span>{" "}
           seu negócio

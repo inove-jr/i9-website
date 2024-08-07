@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
 
     if (response.data.success)
       return Response.json(response.data, { status: 200 });
-    else return Response.json(response.data, { status: 400 });
+    return Response.json(response.data, { status: 400 });
   } catch (error) {
     if (error instanceof z.ZodError) {
       return Response.json(error.issues, { status: 400 });
