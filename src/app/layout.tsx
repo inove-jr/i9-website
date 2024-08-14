@@ -1,10 +1,9 @@
 import "@/styles/globals.css";
 import type { Metadata } from "next";
-// import { Footer } from "@/components/layout/Footer";
-
 import favicon from "public/favicon.ico";
 import faviconDark from "public/favicon-dark.ico";
 import { kanit, prime } from "@/styles/fonts";
+import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: "Inove Jr",
@@ -34,7 +33,7 @@ export default function RootLayout({
     <html lang="pt-br">
       <body className={`${prime.variable} ${kanit.variable}`}>
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );

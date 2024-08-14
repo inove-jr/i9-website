@@ -1,4 +1,3 @@
-import { Footer } from "@/components/layout/Footer";
 import { About } from "./_components/About";
 import { Contact } from "./_components/Contact";
 import { Header } from "./_components/Header";
@@ -15,7 +14,6 @@ export default function Home() {
         <Services />
         <Contact />
       </main>
-      <Footer />
     </>
   );
 }
