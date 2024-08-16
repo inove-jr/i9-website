@@ -16,6 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useForm } from "react-hook-form";
 import { GoogleMapsEmbed } from "@next/third-parties/google";
+import { env } from "@/env";
 
 // Definir o esquema de validação com Zod
 const formSchema = z.object({
@@ -115,11 +116,12 @@ export function Contact() {
       </div>
       <div className="order-2 flex size-full flex-col justify-center rounded-lg lg:order-1 lg:w-1/2 lg:pl-20">
         <GoogleMapsEmbed
-          apiKey="APIDAI9"
+          apiKey={env.NEXT_PUBLIC_GOOGLE_MAPS_KEY}
           height={400}
           width="100%"
           mode="place"
-          q="-9.412526940446115, -40.51450595170382"
+          q="place_id:ChIJuR5TowFxcwcRB6aLNgcVjek"
+          loading="lazy"
         />
       </div>
     </section>
