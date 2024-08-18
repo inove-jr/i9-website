@@ -11,6 +11,8 @@
     "project": "./tsconfig.json"
   },
   "rules": {
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "@next/next/no-img-element": "off",
+    "react/require-default-props": "off"
   }
 }
