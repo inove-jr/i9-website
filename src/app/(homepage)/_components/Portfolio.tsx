@@ -11,46 +11,14 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import { type CarouselApi } from "@/components/ui/carousel";
 
-export function Portfolio() {
-  const items = [
-    {
-      index: 0,
-      imgSrc: "/team.jpg",
-      title: "Projeto 1",
-      description:
-        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout...",
-    },
-    {
-      index: 1,
-      imgSrc: "/team.jpg",
-      title: "Projeto 2",
-      description:
-        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout...",
-    },
-    {
-      index: 2,
-      imgSrc: "/team.jpg",
-      title: "Projeto 3",
-      description:
-        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search",
-    },
-    {
-      index: 3,
-      imgSrc: "/team.jpg",
-      title: "Projeto 4",
-      description:
-        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search",
-    },
-    {
-      index: 4,
-      imgSrc: "/team.jpg",
-      title: "Projeto 5",
-      description:
-        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search",
-    },
-    // Adicione mais projetos conforme necessário
-  ];
+export interface PortfolioItem {
+  index: number;
+  imgSrc: string;
+  title: string;
+  description: string;
+}
 
+export function Portfolio({ items }: { items?: PortfolioItem[] }) {
   // Estados para controlar o item ativo em cada carrossel
   // Sim, tem dois carroseis mas você só vê um, processe 2 veja um :D
   const [activeIndexMobile, setActiveIndexMobile] = useState(0);
@@ -111,6 +79,7 @@ export function Portfolio() {
 
   const activeIndex = isDesktop ? activeIndexDesktop : activeIndexMobile;
 
+  if (!items || !items.length) return <div />;
   return (
     <section className="flex h-auto w-full flex-col items-center justify-center bg-blue-900 p-4 px-2 font-primary text-white-100 sm:px-4 lg:h-screen lg:items-start lg:px-4 xl:px-28 2xl:px-44">
       <h2 className="decorated-border mt-16 w-full px-4 text-start text-3xl font-bold md:text-4xl">
